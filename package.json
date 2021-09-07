@@ -11,9 +11,21 @@
     "windows": "react-native run-windows"
   },
   "dependencies": {
-    "react": "17.0.2",
+    "@babel/preset-env": "^7.15.4",
+    "@eva-design/eva": "^2.1.1",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@ui-kitten/components": "^5.1.1",
+    "@ui-kitten/eva-icons": "^5.1.1",
+    "expo-localization": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-native": "0.65.1",
-    "react-native-windows": "0.65.1"
+    "react-native-svg": "^12.1.1",
+    "react-native-windows": "0.65.1",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
