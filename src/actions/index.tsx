@@ -1,7 +1,7 @@
 import { loginPost, itemsGet, itemGet, itemsStatesGet } from '../utils' 
 import actionTypes from './actionTypes';
 
-export const addToken = (Token: number, RefreshToken = null) => ({
+export const addToken = (Token: any, RefreshToken = null) => ({
   type: 'ADD_TOKEN',
   payload: { Token, RefreshToken }
 });
@@ -77,7 +77,7 @@ export const removeItems = () => (
   }
 )
 
-export const itemsAction = (token: number, page: number, filter = null) => {
+export const itemsAction = (token: number, page = 1, filter = null) => {
   return async (dispatch: any) => {
     try {
       dispatch(itemsRequest())

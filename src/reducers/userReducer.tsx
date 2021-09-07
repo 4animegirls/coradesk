@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 import { HttpError } from '../utils/httperror';
 
-const user = (state = { Token: null, username: '', loginRequest: false, refreshToken: null }, action: any) => {
+const user = (state = { Token: null, username: '', loginRequest: false, refreshToken: null, error: null }, action: any) => {
     switch (action.type) {
         case 'ADD_TOKEN':
             return { ...state, Token: action.payload.Token, RefreshToken: action.payload.RefreshToken };

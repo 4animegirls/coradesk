@@ -41,7 +41,6 @@ export const itemsGet = async (token: number, page = 1, filter: any, refresh = f
       }
     });
     
-    const state = store.getState();
     let res = await response.json();
     if (!refresh) {
       switch(res.Code) {
@@ -52,7 +51,7 @@ export const itemsGet = async (token: number, page = 1, filter: any, refresh = f
           return { ...res, Data: { Items: null } }
 
         case '401.000': {
-          store.getState();
+          const state = store.getState();
           let refreshResponse = await refreshLogin(state.user.refreshToken);
 
           if (refreshResponse.Code === '200.000') {
@@ -67,7 +66,7 @@ export const itemsGet = async (token: number, page = 1, filter: any, refresh = f
       }
     } else {
       if(res.Code === '401.000'){
-        state.dispatch(logout())
+        store.dispatch(logout())
       } else return res
     }
     return null
